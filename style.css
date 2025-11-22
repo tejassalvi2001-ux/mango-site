@@ -1,0 +1,56 @@
+ body {
+      background: linear-gradient(to bottom, red, yellow, green);
+      min-height: 100vh;
+      background-attachment: fixed;
+    }
+
+  .main1{
+    text-align: center;
+  }
+  
+.card {
+  background: rgba(255, 255, 255, 0.4); /* light glass effect card */
+  backdrop-filter: blur(3px);
+  border: none;
+  border-radius: 15px;
+}
+
+.card-body {
+  background: transparent !important; /* title + text area transparent */
+}
+
+.card-title,
+.card-text {
+  background: transparent !important;
+}
+
+.card {
+  height: 100%;              
+  display: flex;
+  flex-direction: column;
+  background: rgba(255, 255, 255, 0.4);
+  backdrop-filter: blur(3px);
+  border-radius: 15px;
+  border: none;
+}
+
+.card-img-top {
+  height: 200px;             /* fixed image height */
+  object-fit: cover;         /* image crop होकर perfect fit */
+}
+
+.card-body {
+  flex: 1;                   /* body full expand */
+  background: transparent !important;
+  display: flex;
+  flex-direction: column;
+}
+
+.card-title,
+.card-text {
+  background: transparent !important;
+}
+
+.card-body .btn {
+  margin-top: auto;          /* button bottom पर जाएगा */
+}

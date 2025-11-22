@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Explore Mango Farm</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      line-height: 1.6;
+      color: black;
+  background: linear-gradient(to bottom, green, yellow, red);
+  min-height: 100vh;
+  background-attachment: fixed;
+    }
+
+    header {
+  opacity: 0;
+  transform: translateY(-50px);
+  animation: slideInTop 4s ease-out forwards;
+  background-image: linear-gradient(to bottom, green, yellow);
+  background-size: cover;
+  background-position: center;
+  padding: 0 20px;
+  color: rgb(85, 30, 20);
+  text-align: center;
+}
+
+@keyframes slideInTop {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+    
+
+    header h1 {
+      font-size: 3rem;
+      padding: 20px;
+      border-radius: 10px;
+    }
+
+    nav {
+      background-color: #f9c74f;
+      padding: 15px;
+      text-align: center;
+    }
+
+    nav a {
+      color: black;
+      text-decoration: none;
+      margin: 0 15px;
+      font-weight: bold;
+    }
+
+    section {
+      padding: 50px 20px;
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    .section-title {
+      text-align: center;
+      margin-bottom: 30px;
+      font-size: 2rem;
+      color: rgb(85, 30, 20);
+    }
+
+    .about p {
+      max-width: 800px;
+      margin: auto;
+      text-align: center;
+      font-size: 1.1rem;
+    }
+
+    .varieties {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+    }
+
+    .variety-card {
+      background-color: #fff5e6;
+      border: 1px solid #eee;
+      border-radius: 12px;
+      width: 250px;
+      padding: 20px;
+      text-align: center;
+      box-shadow: 0 0 10px rgba(0,0,0,0.05);
+    }
+
+.gallery img {
+  width: 100%;
+  height: 220px;     /* all images same height */
+  object-fit: cover; /* perfect crop */
+  border-radius: 10px;
+}
+
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 15px;
+}
+    .quote {
+      background-color: #fefae0;
+      padding: 50px 20px;
+      text-align: center;
+      font-family: Georgia, 'Times New Roman', Times, serif;
+      font-size: 20px;
+    }
+
+    .testimonial {
+      max-width: 700px;
+      margin: auto;
+      font-style: italic;
+      text-align: center;
+    }
+
+    .contact {
+      text-align: center;
+    }
+
+    .contact p {
+      font-size: 1.1rem;
+    }
+
+    footer {
+      background-color: rgb(192, 242, 41);
+      text-align: center;
+      padding: 20px;
+      font-weight: bold;
+    }
+
+    @media (max-width: 768px) {
+      header h1 {
+        font-size: 2rem;
+   
+      }
+
+      nav {
+        font-size: 0.9rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Welcome to शुभMango Farm <br>Fresh, Organic, Delicious!</h1>
+  </header>
+
+  <nav>
+    <a href="#about">About Us</a>
+    <a href="#varieties">Varieties</a>
+    <a href="#gallery">Gallery</a>
+    <a href="#testimonials">Testimonials</a>
+    <a href="#contact">Contact</a>
+  </nav>
+
+  <section id="about" class="about">
+    <h2 class="section-title">About Us</h2>
+    <p> <b>शुभMango</b> Farm is located in the heart of nature, where we grow premium quality mangoes using organic and sustainable practices. Our mission is to bring the taste of tradition to your table.</p>
+  </section>
+
+  <section id="varieties">
+    <h2 class="section-title">Our Varieties</h2>
+    <div class="varieties">
+      <div class="variety-card">
+        <h3>Alphonso (हापूस)</h3>
+        <p>Sweet and rich flavor. King of mangoes!</p>
+      </div>
+      <div class="variety-card">
+        <h3>Payri</h3>
+        <p>Juicy and fiberless mango, loved across India.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="gallery">
+    <h2 class="section-title">Gallery</h2>
+    <div class="gallery">
+      <img src="images/pic3.jpg" alt="mango 1">
+      <img src="images/pic5.jpg" alt="mango 2">
+      <img src="images/pic2.jpg" alt="mango 3">
+      <img src="images/pc1.jpg" alt="mango 4">
+    </div>
+  </section>
+
+  <section>
+    <p class="quote"> <i>"The Sweetness of mango is like your nature so eat once and keep praising it"</i></p>
+  </section>
+
+  <section id="contact" class="contact">
+    <h2 class="section-title">Contact Us</h2>
+    <p>📞 +91 9359195709<br>📍शुभMango Farm, Ratnagiri, Maharashtra<br>✉️ shubhamsalvi1818@gmail.com</p>
+  </section>
+
+  <footer>
+    © 2025 शुभMango Farm. All Rights Reserved.
+  </footer>
+
+</body>
+</html>
