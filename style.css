@@ -1,5 +1,5 @@
- body {
-      background: linear-gradient(to bottom, red, yellow, green);
+body {
+      background: linear-gradient(to bottom, rgb(224, 208, 208), rgba(239, 231, 231, 0.526), rgb(197, 223, 197));
       min-height: 100vh;
       background-attachment: fixed;
     }
@@ -35,8 +35,9 @@
 }
 
 .card-img-top {
-  height: 200px;             /* fixed image height */
-  object-fit: cover;         /* image crop होकर perfect fit */
+  height: 300px;
+  object-fit: cover;
+  width: 100%;
 }
 
 .card-body {
@@ -54,3 +55,31 @@
 .card-body .btn {
   margin-top: auto;          /* button bottom पर जाएगा */
 }
+
+.carousel-item {
+  height: 60vh;
+  min-height: 300px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+@media (max-width: 576px) {
+  h1, h2 {
+    font-size: 1.8rem;
+  }
+  .lead {
+    font-size: 1rem;
+  }
+}
+.carousel-item {
+  transition: transform 850ms ease;
+}
+.mango-text {
+  background: linear-gradient(90deg,rgb(168, 8, 16), rgb(126, 126, 4), rgb(37, 75, 2));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: 700;
+}
+
