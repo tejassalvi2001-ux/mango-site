@@ -23,7 +23,7 @@
     header {
   opacity: 0;
   transform: translateY(-50px);
-  animation: slideInTop 4s ease-out forwards;
+  animation: slideInTop 3s ease-out forwards;
   background: linear-gradient(90deg,rgb(235, 235, 125),rgb(111, 128, 0),rgb(238, 238, 144) );
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -44,9 +44,9 @@
     
 
     header h1 {
-      font-size: 2rem;
-      padding: 20px;
-      border-radius: 10px;
+      font-size: 25px;
+      padding: 10px;
+      border-radius: 1px;
     }
 
     nav {
@@ -138,24 +138,148 @@
     footer {
       background-color:#efd392;
       text-align: center;
-      padding: 20px;
+      padding: 15px;
       font-weight: bold;
     }
 
- @media (max-width: 768px) {
-      header h1 {
-        font-size: 2rem;
-   
-      }
-    }
-    .mango-text {
+     .mango-text {
   background: linear-gradient(90deg,rgb(168, 8, 16), rgb(126, 126, 4), rgb(37, 75, 2));
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   font-weight: 700;
 }
-  </style>
+
+@media (max-width: 768px) {
+  header h1 {                   /* header h1 for 786px screen*/
+    font-size: 1.6rem;
+    line-height: 1.3;
+  }
+}
+@media (max-width: 480px) {
+  header h1 {                       /* header h1 for 480px screen*/
+    font-size: 1.3rem;
+  }
+}
+
+@media (max-width: 600px) {
+  nav a {
+    margin: 0 8px;
+    font-size: 0.8rem;
+  }
+
+  nav {
+    padding: 10px;
+  }
+}
+
+@media (max-width: 480px) {          /* variety card mobile view*/
+  .variety-card {
+    width: 90%;
+  }
+}
+
+@media (max-width: 400px) {
+  .gallery {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Smooth Fade-in + Zoom for Gallery Images */
+.gallery img {
+  opacity: 0;
+  transform: scale(0.9);
+  animation: imgFadeZoom 1s ease-out forwards;
+  transition: transform 0.3s ease;
+}
+
+/* delay for each image */
+.gallery img:nth-child(1) { animation-delay: 1.8s; }
+.gallery img:nth-child(2) { animation-delay: 2.7s; }
+.gallery img:nth-child(3) { animation-delay: 3.3s; }
+.gallery img:nth-child(4) { animation-delay: 4s; }
+
+@keyframes imgFadeZoom {
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+ 
+/* Call Button */
+.call-btn {
+  display: block;
+  background: green;
+  color: white;
+  padding: 12px;
+  margin-top: 15px;
+  text-decoration: none;
+  border-radius: 8px;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+/* Close Button */
+.close-btn {
+  width: 100%;
+  background: red;
+  color: white;
+  padding: 10px;
+  border: none;
+  margin-top: 10px;
+  border-radius: 8px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+
+.btn {
+  width: 120px;
+  height:45px;
+  text-align: center;
+  display: block;
+  margin: 0 auto;
+  background-color: green;
+  color:white;
+  border-radius: 10px;
+}
+
+
+/* Popup Box */
+.popup-box {
+  background: white;
+  padding: 25px;
+  width: 90%;
+  max-width: 350px;
+  text-align: center;
+  border-radius: 12px;
+  animation: popupOpen 0.3s ease-out;
+}
+
+@keyframes popupOpen {
+  from { transform: scale(0.8); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
+
+
+/* Popup Overlay */
+.popup-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.5); /* dark background */
+  display: none; /* hidden by default */
+  justify-content: center;
+  align-items: center;
+  backdrop-filter: blur(3px); /* smooth blur */
+  z-index: 9999;
+}
+
+ </style>
 </head>
+
+
 <body>
 
   <header>
@@ -166,7 +290,6 @@
     <a href="#about">About Us</a>
     <a href="#varieties">Varieties</a>
     <a href="#gallery">Gallery</a>
-    <a href="#testimonials">Testimonials</a>
     <a href="#contact">Contact</a>
   </nav>
 
@@ -187,6 +310,8 @@
         <p>Juicy and fiberless mango, loved across India.</p>
       </div>
     </div>
+    <br> <br>
+    <button  class="btn btn-success" onclick="openPopup()">order Now</button>
   </section>
 
   <section id="gallery">
@@ -200,7 +325,7 @@
   </section>
 
   <section>
-    <p class="quote"> <i>"The Sweetness of mango is like your nature so eat once and keep praising it"</i></p>
+    <p class="quote"> <i>“The sweetness of our mango matches your nature — taste it once, and you’ll keep praising it.”</i></p>
   </section>
 
   <section id="contact" class="contact">
@@ -209,8 +334,36 @@
   </section>
 
   <footer>
-    © 2025 शुभMango Farm. All Rights Reserved.
+    © 2025 <span class="mango-text">शुभMango</span>Farm. All Rights Reserved.
   </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+  <!-- POPUP CONTACT BOX -->
+<div id="contactPopup" class="popup-overlay">
+  <div class="popup-box">
+    <h3>Contact to Order</h3>
+
+    <p><strong>Owner:</strong> Shubham Jagdish Salvi</p>
+    <p><strong>Phone:</strong> +91 9359195709</p>
+
+    <a href="tel:+919359195709" class="call-btn">📞 Call Now</a>
+
+    <button onclick="closePopup()" class="close-btn">Close</button>
+  </div>
+</div>
+
+
+
+<script>
+function openPopup() {
+  document.getElementById("contactPopup").style.display = "flex";
+}
+
+function closePopup() {
+  document.getElementById("contactPopup").style.display = "none";
+}
+</script>
 
 </body>
 </html>
