@@ -16,7 +16,7 @@ window.addEventListener("scroll", () => {
 
 // Popup Functions
 function openPopup() {
-  document.getElementById("contactPopup")..style.display = "flex";
+  document.getElementById("contactPopup").style.display = "flex";
 }
 
 function closePopup() {
