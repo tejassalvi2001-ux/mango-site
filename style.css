@@ -139,7 +139,7 @@ body {
   width: 90%;
   max-width: 350px;
   border-radius: 12px;
-  animation: popupFade 0.4s ease;
+  /* animation: popupFade 0.4s ease; */
   text-align: center;
 }
 
@@ -148,40 +148,9 @@ body {
   to { transform: scale(1); opacity: 1; }
 }
 
-
-/* Popup Background */
-.popup-overlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0,0,0,0.5);
-  display: none;
-  justify-content: center;
-  align-items: center;
-  z-index: 9999;
-}
-
-/* Popup Box */
-.popup-box {
-  background: white;
-  padding: 25px;
-  width: 90%;
-  max-width: 350px;
-  text-align: center;
-  border-radius: 12px;
-  animation: popupOpen 0.3s ease-out;
-}
-
-@keyframes popupOpen {
-  from { transform: scale(0.8); opacity: 0; }
-  to { transform: scale(1); opacity: 1; }
-}
-
 /* Call Button */
 .call-btn {
-  display: block;
+  display: inline-block;
   background: green;
   color: white;
   padding: 12px;
@@ -204,3 +173,4 @@ body {
   font-size: 16px;
   cursor: pointer;
 }
+
