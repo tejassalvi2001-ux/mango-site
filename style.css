@@ -175,6 +175,40 @@ body {
 }
 
 
+/* background image logo */
+
+.main-bg {
+  position: relative;
+}
+
+.main-bg::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: url("owner logo.png");
+  background-repeat: no-repeat;
+  background-position: center top;
+  background-size: 60%;   /* perfect for desktop */
+  background-attachment: scroll;
+  opacity: 0.10;
+  z-index: -1;
+}
+
+/* 📱 Mobile (small phones) */
+@media (max-width: 600px) {
+  .main-bg::before {
+    background-size: 95%;     /* make image larger */
+    background-position: center top;
+  }
+}
+
+/* 📟 Tablets (iPad / Android tabs) */
+@media (min-width: 601px) and (max-width: 1025px) {
+  .main-bg::before {
+    background-size: 90%;     /* perfect balanced size */
+    background-position: center top;
+  }
+}
 
 
 
