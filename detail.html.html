@@ -4,279 +4,8 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Explore Mango Farm</title>
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      line-height: 1.6;
-      color: black;
- background: linear-gradient(to bottom, rgb(224, 208, 208), rgba(239, 231, 231, 0.526), rgb(197, 223, 197));
-  min-height: 100vh;
-  background-attachment: fixed;
-    }
-
-    header {
-  opacity: 0;
-  transform: translateY(-50px);
-  animation: slideInTop 3s ease-out forwards;
-  background: linear-gradient(90deg,rgb(235, 235, 125),rgb(111, 128, 0),rgb(238, 238, 144) );
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  font-weight: 700;
-  background-size: cover;
-  background-position: center;
-  padding: 0 20px;
-  text-align: center;
-}
-
-@keyframes slideInTop {
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-    
-
-    header h1 {
-      font-size: 25px;
-      padding: 10px;
-      border-radius: 1px;
-    }
-
-    nav {
-      background-color:#efd392;
-      padding: 15px;
-      text-align: center;
-        font-size: 0.9rem;
-    }
-
-    nav a {
-      color: black;
-      text-decoration: none;
-      margin: 0 15px;
-      font-weight: bold;
-    }
-
-    section {
-      padding: 50px 20px;
-      max-width: 1200px;
-      margin: auto;
-    }
-
-    .section-title {
-      text-align: center;
-      margin-bottom: 15px;
-      font-size: 2rem;
-      color: black;
-    }
-
-    .about p {
-      max-width: 800px;
-      margin: auto;
-      text-align: center;
-      font-size: 1.1rem;
-    }
-
-    .varieties {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 20px;
-    }
-
-    .variety-card {
-      background-color: #fff5e6;
-      border: 1px solid #eee;
-      border-radius: 12px;
-      width: 250px;
-      padding: 20px;
-      text-align: center;
-      box-shadow: 0 0 10px rgba(0,0,0,0.05);
-    }
-
-.gallery img {
-  width: 100%;
-  height: 220px;     /* all images same height */
-  object-fit: cover; /* perfect crop */
-  border-radius: 10px;
-}
-
-.gallery {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 15px;
-}
-    .quote {
-      background-color:#efd392;
-      padding: 20px 15px;
-      text-align: center;
-      font-family: Georgia, 'Times New Roman', Times, serif;
-      font-size: 20px;
-    }
-
-    .testimonial {
-      max-width: 700px;
-      margin: auto;
-      font-style: italic;
-      text-align: center;
-    }
-
-    .contact {
-      text-align: center;
-    }
-
-    .contact p {
-      font-size: 1.1rem;
-    }
-
-    footer {
-      background-color:#efd392;
-      text-align: center;
-      padding: 15px;
-      font-weight: bold;
-    }
-
-     .mango-text {
-  background: linear-gradient(90deg,rgb(168, 8, 16), rgb(126, 126, 4), rgb(37, 75, 2));
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  font-weight: 700;
-}
-
-@media (max-width: 768px) {
-  header h1 {                   /* header h1 for 786px screen*/
-    font-size: 1.6rem;
-    line-height: 1.3;
-  }
-}
-@media (max-width: 480px) {
-  header h1 {                       /* header h1 for 480px screen*/
-    font-size: 1.3rem;
-  }
-}
-
-@media (max-width: 600px) {
-  nav a {
-    margin: 0 8px;
-    font-size: 0.8rem;
-  }
-
-  nav {
-    padding: 10px;
-  }
-}
-
-@media (max-width: 480px) {          /* variety card mobile view*/
-  .variety-card {
-    width: 90%;
-  }
-}
-
-@media (max-width: 400px) {
-  .gallery {
-    grid-template-columns: 1fr;
-  }
-}
-
-/* Smooth Fade-in + Zoom for Gallery Images */
-.gallery img {
-  opacity: 0;
-  transform: scale(0.9);
-  animation: imgFadeZoom 1s ease-out forwards;
-  transition: transform 0.3s ease;
-}
-
-/* delay for each image */
-.gallery img:nth-child(1) { animation-delay: 1.8s; }
-.gallery img:nth-child(2) { animation-delay: 2.7s; }
-.gallery img:nth-child(3) { animation-delay: 3.3s; }
-.gallery img:nth-child(4) { animation-delay: 4s; }
-
-@keyframes imgFadeZoom {
-  to {
-    opacity: 1;
-    transform: scale(1);
-  }
-}
- 
-/* Call Button */
-.call-btn {
-  display: block;
-  background: green;
-  color: white;
-  padding: 12px;
-  margin-top: 15px;
-  text-decoration: none;
-  border-radius: 8px;
-  font-size: 18px;
-  font-weight: bold;
-}
-
-/* Close Button */
-.close-btn {
-  width: 100%;
-  background: red;
-  color: white;
-  padding: 10px;
-  border: none;
-  margin-top: 10px;
-  border-radius: 8px;
-  font-size: 16px;
-  cursor: pointer;
-}
-
-
-.btn {
-  width: 120px;
-  height:45px;
-  text-align: center;
-  display: block;
-  margin: 0 auto;
-  background-color: green;
-  color:white;
-  border-radius: 10px;
-}
-
-
-/* Popup Box */
-.popup-box {
-  background: white;
-  padding: 25px;
-  width: 90%;
-  max-width: 350px;
-  text-align: center;
-  border-radius: 12px;
-  animation: popupOpen 0.3s ease-out;
-}
-
-@keyframes popupOpen {
-  from { transform: scale(0.8); opacity: 0; }
-  to { transform: scale(1); opacity: 1; }
-}
-
-
-/* Popup Overlay */
-.popup-overlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0,0,0,0.5); /* dark background */
-  display: none; /* hidden by default */
-  justify-content: center;
-  align-items: center;
-  backdrop-filter: blur(3px); /* smooth blur */
-  z-index: 9999;
-}
-
- </style>
+  <link rel="stylesheet" href="explore.css">
+  
 </head>
 
 
@@ -315,14 +44,24 @@
   </section>
 
   <section id="gallery">
-    <h2 class="section-title">Gallery</h2>
-    <div class="gallery">
-      <img src="pic3.jpg" alt="mango 1">
-      <img src="pic5.jpg" alt="mango 2">
-      <img src="pic2.jpg" alt="mango 3">
-      <img src="pc1.jpg" alt="mango 4">
+  <h2 class="section-title">Gallery</h2>
+
+  <div class="gallery">
+    <div class="img-box">
+      <img src="pic3.jpg" onclick="openImgPopup(this)" alt="mango 1">
     </div>
-  </section>
+    <div class="img-box">
+      <img src="pic5.jpg" onclick="openImgPopup(this)" alt="mango 2">
+    </div>
+    <div class="img-box">
+      <img src="pic2.jpg" onclick="openImgPopup(this)" alt="mango 3">
+    </div>
+    <div class="img-box">
+      <img src="pc1.jpg" onclick="openImgPopup(this)" alt="mango 4">
+    </div>
+  </div>
+</section>
+
 
   <section>
     <p class="quote"> <i>“The sweetness of our mango matches your nature — taste it once, and you’ll keep praising it.”</i></p>
@@ -364,6 +103,12 @@ function closePopup() {
   document.getElementById("contactPopup").style.display = "none";
 }
 </script>
+
+<!-- IMAGE POPUP -->
+<div id="imgPopup" class="img-popup" onclick="closeImgPopup()">
+  <img id="popupImg">
+</div>
+
 
 </body>
 </html>
