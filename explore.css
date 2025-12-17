@@ -1,0 +1,270 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.6;
+  color: black;
+  background: linear-gradient(to bottom, rgb(224, 208, 208), rgba(239, 231, 231, 0.526), rgb(197, 223, 197));
+  min-height: 100vh;
+  background-attachment: fixed;
+}
+
+/* Header */
+header {
+  opacity: 0;
+  transform: translateY(-50px);
+  animation: slideInTop 3s ease-out forwards;
+  background: linear-gradient(90deg,rgb(235, 235, 125),rgb(111, 128, 0),rgb(238, 238, 144));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: 700;
+  background-size: cover;
+  background-position: center;
+  padding: 0 20px;
+  text-align: center;
+}
+
+@keyframes slideInTop {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+header h1 {
+  font-size: 25px;
+  padding: 10px;
+  border-radius: 1px;
+  word-wrap: break-word;
+}
+
+/* Navigation */
+nav {
+  background-color: #efd392;
+  padding: 15px;
+  text-align: center;
+  font-size: 0.9rem;
+}
+
+nav a {
+  color: black;
+  text-decoration: none;
+  margin: 0 15px;
+  font-weight: bold;
+}
+
+/* Section */
+section {
+  padding: 50px 20px;
+  max-width: 1200px;
+  margin: auto;
+}
+
+.section-title {
+  text-align: center;
+  margin-bottom: 15px;
+  font-size: 2rem;
+  color: black;
+  font-family: 'Times New Roman', Times, serif;
+}
+
+.about p {
+  max-width: 800px;
+  margin: auto;
+  text-align: center;
+  font-size: 1.1rem;
+}
+
+/* Variety Cards */
+.varieties {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+.variety-card {
+  background-color: #fff5e6;
+  border: 1px solid #eee;
+  border-radius: 12px;
+  width: 250px;
+  padding: 20px;
+  text-align: center;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+  transition: transform 0.3s ease;
+}
+
+.variety-card:hover {
+  transform: translateY(-5px);
+}
+
+/* Gallery */
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 15px;
+}
+
+.img-box {
+  overflow: hidden;
+  border-radius: 15px;
+  position: relative;
+  height: 0;
+  padding-top: 66.66%; /* 3:2 aspect ratio */
+  box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+  background: rgba(255,255,255,0.2);
+}
+
+.img-box img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.img-box:hover img {
+  transform: scale(1.2);
+}
+
+/* Quote Section */
+.quote {
+  background-color: #efd392;
+  padding: 20px 15px;
+  text-align: center;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-size: 20px;
+}
+
+.testimonial {
+  max-width: 700px;
+  margin: auto;
+  font-style: italic;
+  text-align: center;
+}
+
+/* Contact Section */
+.contact {
+  text-align: center;
+}
+
+.contact p {
+  font-size: 1.1rem;
+}
+
+/* Footer */
+footer {
+  background-color: #efd392;
+  text-align: center;
+  padding: 15px;
+  font-weight: bold;
+}
+
+/* Mango Text Gradient */
+.mango-text {
+  background: linear-gradient(90deg,rgb(168, 8, 16), rgb(126, 126, 4), rgb(37, 75, 2));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: 700;
+}
+
+/* Buttons */
+.btn {
+  width: 90%;
+  max-width: 200px;
+  height: 45px;
+  text-align: center;
+  display: block;
+  margin: 15px auto;
+  background-color: green;
+  color: white;
+  border-radius: 10px;
+  border: none;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: transform 0.3s ease, background 0.3s ease;
+}
+
+.btn:hover {
+  transform: scale(1.05);
+  background-color: darkgreen;
+}
+
+/* Popup Box */
+.popup-box {
+  background: white;
+  padding: 25px;
+  width: 90%;
+  max-width: 350px;
+  text-align: center;
+  border-radius: 12px;
+  animation: popupOpen 0.3s ease-out;
+}
+
+@keyframes popupOpen {
+  from { transform: scale(0.8); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
+
+/* Popup Overlay */
+.popup-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.5);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  backdrop-filter: blur(3px);
+  z-index: 9999;
+}
+
+/* Call & Close Buttons */
+.call-btn, .close-btn {
+  display: block;
+  width: 90%;
+  max-width: 200px;
+  margin: 10px auto;
+  padding: 12px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: bold;
+  cursor: pointer;
+  border: none;
+}
+
+.call-btn {
+  background: green;
+  color: white;
+}
+
+.close-btn {
+  background: red;
+  color: white;
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+  header h1 { font-size: 1.6rem; }
+}
+
+@media (max-width: 480px) {
+  header h1 { font-size: 1.3rem; }
+  .nav a { margin: 0 8px; font-size: 0.8rem; }
+  .variety-card { width: 90%; }
+  .btn { width: 95%; }
+  .gallery { grid-template-columns: 1fr 1fr; }
+}
+
+@media (max-width: 400px) {
+  .gallery { grid-template-columns: 1fr; }
+}
